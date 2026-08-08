@@ -3,22 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lĩnh Vực Hoạt Động - Trung Tâm Hỗ Trợ & Phát Triển Cộng Đồng</title>
+    <title>Lĩnh Vực Hoạt Động - Trung Tâm Hỗ Trợ Phát Triển & Nhân Đạo</title>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Quicksand', sans-serif;
-        }
-        body {
-            background-color: #f7f9fc;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Thanh Header phía trên */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Quicksand', sans-serif; }
+        body { background-color: #f7f9fc; color: #333; line-height: 1.6; }
+        
+        /* Header đồng bộ */
         header {
             background: linear-gradient(135deg, #10b981, #059669);
             padding: 15px 40px;
@@ -27,250 +18,158 @@
             align-items: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-
-        /* Logo kích thước to giống hệt ảnh mẫu */
         .logo-img {
-            width: 95px;
-            height: 95px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            width: 75px; height: 75px; border-radius: 50%; object-fit: cover; border: 2px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
-
-        /* Menu điều hướng */
+        nav { display: flex; gap: 15px; }
         nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: opacity 0.2s;
+            background: rgba(40, 70, 60, 0.85); color: white; text-decoration: none; padding: 10px 22px; border-radius: 30px; font-weight: 600; font-size: 0.95rem; transition: background 0.3s;
         }
-        nav a:hover {
-            opacity: 0.8;
-            text-decoration: underline;
-        }
+        nav a:hover, nav a.active { background: #059669; }
 
-        /* Banner của trang lĩnh vực */
+        /* Tiêu đề trang lĩnh vực */
         .page-banner {
             background: linear-gradient(135deg, #10b981, #059669);
-            color: white;
-            text-align: center;
-            padding: 50px 20px 60px 20px;
+            color: white; text-align: center; padding: 50px 20px 60px 20px;
         }
-        .page-banner h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        .page-banner p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
+        .page-banner h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 700; }
+        .page-banner p { font-size: 1.1rem; opacity: 0.9; }
 
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        /* Grid Lĩnh Vực */
+        /* Container & Grid các lĩnh vực */
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
         .fields-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
         }
         .field-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
+            background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease; display: flex; flex-direction: column; border-top: 5px solid #059669;
         }
-        .field-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        .field-icon {
-            background: #d1fae5;
-            color: #059669;
-            font-size: 2.5rem;
-            padding: 20px;
-            text-align: center;
-        }
-        .field-content {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .field-content h3 {
-            font-size: 1.3rem;
-            color: #111827;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-        .field-content p {
-            font-size: 0.95rem;
-            color: #4b5563;
-            margin-bottom: 15px;
-        }
+        .field-card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .field-icon { background: #d1fae5; color: #059669; font-size: 2.5rem; padding: 20px; text-align: center; }
+        .field-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .field-content h3 { font-size: 1.25rem; color: #111827; margin-bottom: 12px; font-weight: 700; }
+        .field-content p { font-size: 0.95rem; color: #4b5563; margin-bottom: 10px; }
 
-        /* Icon điện thoại nổi góc phải dưới gắn đúng số 0823 972 886 */
+        /* Icon điện thoại hiển thị số khi click */
         .phone-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-            text-decoration: none;
-            font-size: 1.6rem;
-            z-index: 1000;
-            transition: transform 0.3s;
+            position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%; box-shadow: 0 4px 20px rgba(0,0,0,0.4); text-decoration: none; font-size: 1.8rem; z-index: 1000; transition: transform 0.3s;
         }
-        .phone-float:hover {
-            transform: scale(1.1);
-        }
+        .phone-float:hover { transform: scale(1.1); }
 
-        /* Footer chuẩn */
+        /* Footer đồng bộ chuẩn */
         footer {
-            background: #1f2937;
-            color: #9ca3af;
-            padding: 40px 20px;
-            margin-top: 60px;
+            background: #1f2937; color: #9ca3af; padding: 40px 40px 20px 40px; margin-top: 60px;
         }
         .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
+            max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 25px;
         }
         .footer-col h3 { color: white; margin-bottom: 15px; font-size: 1.1rem; }
         .footer-col p { color: #9ca3af; font-size: 0.95rem; margin-bottom: 8px; }
-        .footer-bottom {
-            text-align: center;
-            border-top: 1px solid #374151;
-            padding-top: 20px;
-            font-size: 0.9rem;
-        }
+        .footer-bottom { text-align: center; border-top: 1px solid #374151; padding-top: 20px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-    <!-- Header: Logo to (image_bdbb55.jpg) + Menu phải -->
+    <!-- Header -->
     <header>
         <a href="index.html">
-            <img src="image_bdbb55.jpg" alt="Logo Trung Tâm" class="logo-img">
+            <img src="image_bdbb55.jpg" alt="Logo" class="logo-img">
         </a>
         <nav>
-            <a href="index.html">Trang Chủ</a>
-            <a href="linhvuc.html">Lĩnh Vực Hoạt Động</a>
+            <a href="index.html">GIỚI THIỆU</a>
+            <a href="linhvuc.html" class="active">LĨNH VỰC</a>
+            <a href="hoatdong.html">HOẠT ĐỘNG</a>
+            <a href="lienhe.html">LIÊN HỆ</a>
         </nav>
     </header>
 
-    <!-- Phần đầu trang (Banner) -->
+    <!-- Banner -->
     <div class="page-banner">
-        <h1>Trung Tâm Hỗ Trợ & Phát Triển Cộng Đồng</h1>
+        <h1>Lĩnh Vực Hoạt Động Trọng Tâm</h1>
         <p>Đồng hành cùng sự phát triển của trẻ thơ và sẻ chia yêu thương với cộng đồng</p>
     </div>
 
-    <!-- Nội dung chính: Các lĩnh vực hoạt động -->
+    <!-- Nội dung các lĩnh vực -->
     <div class="container">
-        <h2 style="text-align: center; font-size: 2rem; color: #065f46; margin-bottom: 40px; font-weight: 700;">Lĩnh Vực Hoạt Động Trọng Tâm</h2>
-        
         <div class="fields-grid">
             <!-- Lĩnh vực 1 -->
             <div class="field-card">
                 <div class="field-icon">🧩</div>
                 <div class="field-content">
                     <div>
-                        <h3>Can Thiệp Sớm Cho Trẻ</h3>
+                        <h3>Can Thiệp Sớm Trẻ Chậm Phát Triển</h3>
                         <p>Chuyên hỗ trợ can thiệp chuyên sâu cho trẻ chậm phát triển (chậm đi, chậm nói), trẻ tự kỷ, tăng động giảm chú ý.</p>
-                        <p>Đánh giá tâm lý, xây dựng lộ trình cá nhân hóa giúp trẻ hòa nhập cộng đồng và phát triển kỹ năng sống.</p>
+                        <p>Xây dựng lộ trình cá nhân hóa giúp trẻ hòa nhập cộng đồng tốt nhất.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Lĩnh vực 2 -->
-            <div class="field-card">
+            <div class="field-card" style="border-top-color: #2563eb;">
                 <div class="field-icon">🧸</div>
                 <div class="field-content">
                     <div>
                         <h3>Đồ Chơi Giáo Dục Thông Minh</h3>
                         <p>Nhận gia công và phân phối các dòng đồ chơi giáo dục thông minh an toàn, chất lượng cao dành riêng cho bé từ 1 đến 7 tuổi.</p>
-                        <p>Sản phẩm kích thích tư duy sáng tạo, hỗ trợ phát triển toàn diện cả về thể chất lẫn trí tuệ cho trẻ nhỏ.</p>
+                        <p>Kích thích tư duy sáng tạo và phát triển toàn diện cho trẻ nhỏ.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Lĩnh vực 3 -->
-            <div class="field-card">
+            <div class="field-card" style="border-top-color: #d97706;">
                 <div class="field-icon">🎨</div>
                 <div class="field-content">
                     <div>
-                        <h3>Sản Xuất Thủ Công Mỹ Nghệ</h3>
-                        <p>Sản xuất và cung cấp các sản phẩm thủ công tinh xảo, mang giá trị nghệ thuật và tính ứng dụng cao trong đời sống.</p>
-                        <p>Tạo việc làm và thu nhập ổn định cho lao động yếu thế, góp phần gìn giữ và phát triển làng nghề truyền thống.</p>
+                        <h3>Sản Xuất Sản Phẩm Thủ Công</h3>
+                        <p>Sản xuất và cung cấp các sản phẩm thủ công mỹ nghệ tinh xảo, mang giá trị nghệ thuật cao trong đời sống.</p>
+                        <p>Tạo việc làm và thu nhập ổn định cho lực lượng lao động yếu thế.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Lĩnh vực 4 -->
-            <div class="field-card">
+            <div class="field-card" style="border-top-color: #dc2626;">
                 <div class="field-icon">❤️</div>
                 <div class="field-content">
                     <div>
                         <h3>Hỗ Trợ Gia Đình Khó Khăn</h3>
-                        <p>Đồng hành, sẻ chia và hỗ trợ các gia đình có hoàn cảnh khó khăn nuôi dạy trẻ tự kỷ, chậm phát triển, tăng động.</p>
-                        <p>Tổ chức các hoạt động tư vấn tâm lý miễn phí, kết nối nguồn lực cộng đồng để xoa dịu bớt gánh nặng cho các bậc phụ huynh.</p>
+                        <p>Đồng hành, sẻ chia và hỗ trợ các gia đình có hoàn cảnh khó khăn nuôi dạy trẻ tự kỷ, tăng động.</p>
+                        <p>Tổ chức tư vấn tâm lý miễn phí và kết nối nguồn lực cộng đồng.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Footer chuẩn -->
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-col">
                 <h3>Về Chúng Tôi</h3>
-                <p>Trung tâm hoạt động vì sự phát triển toàn diện của trẻ em và hỗ trợ các hoàn cảnh khó khăn trong cộng đồng.</p>
+                <p>Đơn vị tiên phong trong công tác đào tạo nghề nhân đạo và hỗ trợ việc làm cho người khuyết tật.</p>
             </div>
             <div class="footer-col">
-                <h3>Lĩnh Vực Trọng Tâm</h3>
-                <p>Can thiệp sớm trẻ tự kỷ, chậm nói</p>
-                <p>Đồ chơi giáo dục thông minh</p>
-                <p>Sản xuất thủ công mỹ nghệ</p>
-                <p>Hỗ trợ gia đình khó khăn</p>
+                <h3>THÔNG TIN LIÊN HỆ</h3>
+                <p>📍 A43 Khu đô thị Geleximco A - An Khánh - Hoài Đức - Hà Nội</p>
+                <p>📞 0823 972 886</p>
+                <p>✉️ trungtamhotrotrekhuyettat@gmail.com</p>
             </div>
             <div class="footer-col">
-                <h3>Liên Hệ</h3>
-                <p>📍 Địa chỉ: Hà Nội, Việt Nam</p>
-                <p>📞 Hotline: 0823.972.886</p>
-                <p>✉️ Email: lienhe@nhandao.vn</p>
+                <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+                <p>Chính sách bảo mật</p>
+                <p>Điều khoản sử dụng</p>
+                <p>Hướng dẫn tương tác</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Trung Tâm Hỗ Trợ Phát Triển & Nhân Đạo. All rights reserved.</p>
+            <p>&copy; 2026 Trung tâm Dạy nghề nhân đạo. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Icon điện thoại nổi góc phải dưới gắn sẵn số 0823972886 -->
-    <a href="tel:0823972886" class="phone-float" title="Gọi ngay: 0823.972.886">
+    <!-- Icon điện thoại hiện số khi bấm -->
+    <a href="javascript:void(0);" onclick="alert('Hotline liên hệ: 0823 972 886');" class="phone-float" title="Liên hệ điện thoại">
         📞
     </a>
 
