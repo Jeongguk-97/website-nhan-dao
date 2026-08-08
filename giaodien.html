@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trung tâm Dạy nghề nhân đạo</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Phông chữ thiết kế -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Playfair+Display:ital,wght@1,600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome cho Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        slogan: ['Playfair Display', 'serif'],
+                        boxtext: ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        navbg: '#628e83', 
+                        btnbg: '#179140', 
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .tab-content { display: none; animation: fadeIn 0.4s ease-in-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Hình nền banner chính */
+        .bg-lotus {
+            background-color: #2d3748; 
+            background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)), url('nen-web.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Hình nền tình nguyện */
+        .bg-compassion {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url('./images.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+        }
+
+        .text-shadow-custom {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+        }
+
+        .no-wrap-text {
+            white-space: nowrap !important;
+            font-size: clamp(24px, 5vw, 64px); 
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-gray-50 flex flex-col min-h-screen scroll-smooth">
+
+    <!-- 1. THANH MENU -->
+    <nav class="absolute top-0 left-0 w-full z-50 p-4">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between max-w-[1400px] mx-auto">
+            <!-- Logo -->
+            <div class="bg-white p-1 shadow-lg w-28 h-28 flex items-center justify-center rounded-full overflow-hidden border-2 border-white">
+                <img src="image_bdbb55.jpg" alt="Logo Trung Tâm" class="w-full h-full object-contain">
+            </div>
+            
+            <!-- Menu -->
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6 mt-4 md:mt-0">
+                <button onclick="switchTab('tab-trangchu')" class="bg-navbg text-white hover:bg-teal-700 font-bold text-sm md:text-base uppercase px-6 md:px-8 py-2.5 rounded-full shadow-md transition duration-300">Giới thiệu</button>
+                <button onclick="switchTab('tab-linhvuc')" class="bg-navbg text-white hover:bg-teal-700 font-bold text-sm md:text-base uppercase px-6 md:px-8 py-2.5 rounded-full shadow-md transition duration-300">Lĩnh vực</button>
+                <button onclick="switchTab('tab-hoatdong')" class="bg-navbg text-white hover:bg-teal-700 font-bold text-sm md:text-base uppercase px-6 md:px-8 py-2.5 rounded-full shadow-md transition duration-300">Hoạt động</button>
+                <button onclick="switchTab('tab-lienhe')" class="bg-navbg text-white hover:bg-teal-700 font-bold text-sm md:text-base uppercase px-6 md:px-8 py-2.5 rounded-full shadow-md transition duration-300">Liên hệ</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. NỘI DUNG CHÍNH -->
+    <main class="flex-grow">
+        
+        <!-- === KHỐI TRANG CHỦ === -->
+        <div id="tab-trangchu" class="tab-content active">
+            
+            <!-- Hero Banner -->
+            <section class="relative h-screen min-h-[700px] flex items-center justify-center bg-lotus px-4 pt-20 overflow-hidden">
+                <div class="text-center w-full max-w-6xl mx-auto flex flex-col items-center justify-center">
+                    
+                    <h1 class="font-slogan italic text-white mb-10 text-shadow-custom no-wrap-text w-full text-center">
+                        TRAO&nbsp;CƠ&nbsp;HỘI&nbsp;-&nbsp;DỰNG&nbsp;TƯƠNG&nbsp;LAI
+                    </h1>
+                    
+                    <div class="bg-white px-6 py-10 md:px-12 md:py-12 rounded shadow-2xl w-full max-w-4xl border border-gray-200">
+                        <p class="font-boxtext text-black font-bold text-base md:text-xl lg:text-2xl leading-relaxed mb-10 text-center uppercase tracking-wide">
+                            Đơn vị tiên phong trong công tác đào tạo nghề nhân đạo và hỗ trợ việc làm, kiến tạo một xã hội hòa nhập vì sự phát triển toàn diện của người khuyết tật VIỆT&nbsp;NAM.
+                        </p>
+                        
+                        <div class="flex justify-center items-center">
+                            <div class="border-l-2 border-r-2 border-black px-6 py-1">
+                                <a href="#gioi-thieu" class="inline-flex items-center gap-2 bg-btnbg hover:bg-green-800 text-white text-lg md:text-xl font-boxtext font-bold uppercase px-8 md:px-10 py-3 shadow-md transition duration-300">
+                                    TÌM HIỂU THÊM
+                                    <span class="text-2xl ml-1">🪷</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KHỐI CHỨA NỀN YÊU THƯƠNG -->
+            <div class="bg-compassion">
+                <!-- Phần Giới Thiệu -->
+                <section id="gioi-thieu" class="pt-24 pb-12">
+                    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+                        <h2 class="text-3xl font-bold text-navbg mb-8 uppercase">Về Trung Tâm</h2>
+                        <div class="w-20 h-1 bg-btnbg mx-auto mb-10"></div>
+                        
+                        <div class="bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-sm border border-white/50">
+                            <p class="text-xl text-gray-900 leading-relaxed mb-6 text-justify md:text-center font-semibold">
+                                Hỗ trợ trẻ tự kỷ, trẻ khuyết tật và các hoàn cảnh khó khăn khác.
+                            </p>
+                            <p class="text-xl text-gray-900 leading-relaxed text-justify md:text-center font-semibold">
+                                Hướng nghiệp hỗ trợ trẻ khuyết tật, người khó khăn, tạo việc làm và tiêu thụ các sản phẩm do họ làm ra hoặc liên kết theo quy chế tổ chức và pháp luật Việt Nam.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Phần Giá trị & Chương trình -->
+                <section class="pb-24 pt-8 border-t border-white/30">
+                    <div class="max-w-6xl mx-auto px-4">
+                        <h2 class="text-3xl font-bold text-navbg mb-4 text-center uppercase">Chương Trình & Giá Trị</h2>
+                        <div class="w-24 h-1 bg-btnbg mx-auto mb-12"></div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-white/50 p-6 flex items-start border-l-8 border-l-blue-600 hover:shadow-lg transition duration-300">
+                                <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center shrink-0 mr-6">
+                                    <i class="fas fa-book-open text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-blue-900 mb-2 uppercase">1. Giáo dục đặc biệt - Chương trình can thiệp sớm</h3>
+                                    <p class="text-gray-800 font-medium">Chương trình cá nhân hóa, phù hợp với từng trẻ.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-white/50 p-6 flex items-start border-l-8 border-l-orange-500 hover:shadow-lg transition duration-300">
+                                <div class="bg-orange-100 text-orange-500 w-16 h-16 rounded-full flex items-center justify-center shrink-0 mr-6">
+                                    <i class="fas fa-child text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-orange-700 mb-2 uppercase">2. Hỗ trợ trẻ tự kỷ - Chậm nói - Tăng động</h3>
+                                    <p class="text-gray-800 font-medium">Can thiệp sớm - hỗ trợ đúng cách - đồng hành lâu dài.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-white/50 p-6 flex items-start border-l-8 border-l-green-500 hover:shadow-lg transition duration-300">
+                                <div class="bg-green-100 text-green-600 w-16 h-16 rounded-full flex items-center justify-center shrink-0 mr-6">
+                                    <i class="fas fa-comments text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-green-800 mb-2 uppercase">3. Phát triển ngôn ngữ - Khả năng giao tiếp</h3>
+                                    <p class="text-gray-800 font-medium">Giúp trẻ tự tin giao tiếp và hòa nhập cộng đồng.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-white/50 p-6 flex items-start border-l-8 border-l-purple-600 hover:shadow-lg transition duration-300">
+                                <div class="bg-purple-100 text-purple-600 w-16 h-16 rounded-full flex items-center justify-center shrink-0 mr-6">
+                                    <i class="fas fa-star text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-purple-800 mb-2 uppercase">4. Rèn luyện và phát triển thêm kỹ năng sống</h3>
+                                    <p class="text-gray-800 font-medium">Trang bị kỹ năng cần thiết - Vững bước tương lai.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- === CÁC KHỐI TAB KHÁC === -->
+        <div id="tab-linhvuc" class="tab-content py-32 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-4xl font-bold text-navbg">Lĩnh vực hoạt động</h1>
+            </div>
+        </div>
+
+        <div id="tab-hoatdong" class="tab-content py-32 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-4xl font-bold text-navbg">Các hoạt động tiêu biểu</h1>
+            </div>
+        </div>
+
+        <div id="tab-lienhe" class="tab-content py-32 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-4xl font-bold text-navbg">Liên hệ với chúng tôi</h1>
+            </div>
+        </div>
+    </main>
+
+    <!-- 3. FOOTER -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6 border-t-4 border-navbg">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-xl font-bold mb-4 text-btnbg uppercase">Thông tin liên hệ</h3>
+                <p class="mb-4 flex items-start gap-3 text-gray-300">
+                    <i class="fas fa-map-marker-alt mt-1 text-red-500"></i>
+                    <span>A43 Khu đô thị Geleximco A - An Khánh - Hoài Đức - Hà Nội</span>
+                </p>
+                <p class="mb-4 flex items-center gap-3 text-gray-300">
+                    <i class="fas fa-phone-alt text-green-500"></i>
+                    <span>0823 972 886</span>
+                </p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4 text-btnbg uppercase">Bản đồ chỉ đường</h3>
+                <div class="w-full h-56 bg-gray-800 rounded-lg overflow-hidden shadow-lg border border-gray-700 relative">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14898.81068837119!2d105.7218785!3d20.9842172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313453a25d2cba59%3A0xc31639dcc04bc0df!2sKhu%20%C4%91%C3%B4%20th%E1%BB%8B%20Geleximco%20L%C3%AA%20Tr%E1%BB%8Dng%20T%E1%BA%A5n!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-gray-500 text-sm mt-10">
+            &copy; 2026 Trung tâm Dạy nghề nhân đạo.
+        </div>
+    </footer>
+
+    <!-- 4. NÚT ĐIỆN THOẠI RUNG ĐỘNG -->
+    <a href="tel:0823972886" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition duration-300 group cursor-pointer">
+        <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
+        <i class="fas fa-phone-alt text-2xl relative z-10 group-hover:rotate-12 transition-transform"></i>
+        <span class="absolute right-16 bg-gray-900 text-white text-sm font-bold px-4 py-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            0823 972 886
+        </span>
+    </a>
+
+    <!-- SCRIPT CHUYỂN TAB -->
+    <script>
+        function switchTab(tabId) {
+            let tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
