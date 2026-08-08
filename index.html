@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +33,6 @@
         .tab-content.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
-        /* Hình nền banner chính */
         .bg-lotus {
             background-color: #2d3748; 
             background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)), url('nen-web.jpg');
@@ -41,7 +40,6 @@
             background-position: center;
         }
         
-        /* Hình nền tình nguyện */
         .bg-compassion {
             background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url('./images.jpg');
             background-size: cover;
@@ -100,10 +98,10 @@
                         
                         <div class="flex justify-center items-center">
                             <div class="border-l-2 border-r-2 border-black px-6 py-1">
-                                <a href="#gioi-thieu" class="inline-flex items-center gap-2 bg-btnbg hover:bg-green-800 text-white text-lg md:text-xl font-boxtext font-bold uppercase px-8 md:px-10 py-3 shadow-md transition duration-300">
+                                <button onclick="switchTab('tab-linhvuc')" class="inline-flex items-center gap-2 bg-btnbg hover:bg-green-800 text-white text-lg md:text-xl font-boxtext font-bold uppercase px-8 md:px-10 py-3 shadow-md transition duration-300 cursor-pointer">
                                     TÌM HIỂU THÊM
                                     <span class="text-2xl ml-1">🪷</span>
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -181,31 +179,64 @@
             </div>
         </div>
 
-        <!-- === CÁC KHỐI TAB KHÁC === -->
-        <div id="tab-linhvuc" class="tab-content py-32 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 text-center">
-                <h1 class="text-4xl font-bold text-navbg">Lĩnh vực hoạt động</h1>
+        <!-- === KHỐI LĨNH VỰC HOẠT ĐỘNG CHI TIẾT (ĐÃ ĐIỀN ĐỦ 4 Ô) === -->
+        <div id="tab-linhvuc" class="tab-content py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <h1 class="text-4xl font-bold text-navbg text-center mb-4 uppercase">Lĩnh vực hoạt động</h1>
+                <div class="w-20 h-1 bg-btnbg mx-auto mb-12"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Ô 1 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-md border-t-4 border-emerald-600 flex flex-col justify-between">
+                        <div>
+                            <div class="text-4xl mb-4 text-center">🧩</div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Can Thiệp Sớm Cho Trẻ</h3>
+                            <p class="text-gray-600 text-sm mb-4">Chuyên hỗ trợ can thiệp chuyên sâu cho trẻ chậm phát triển (chậm đi, chậm nói), trẻ tự kỷ, tăng động giảm chú ý.</p>
+                        </div>
+                    </div>
+
+                    <!-- Ô 2 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-md border-t-4 border-blue-600 flex flex-col justify-between">
+                        <div>
+                            <div class="text-4xl mb-4 text-center">🧸</div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Đồ Chơi Giáo Dục Thông Minh</h3>
+                            <p class="text-gray-600 text-sm mb-4">Nhận gia công và phân phối các dòng đồ chơi giáo dục thông minh an toàn, chất lượng cao dành riêng cho bé từ 1 đến 7 tuổi.</p>
+                        </div>
+                    </div>
+
+                    <!-- Ô 3 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-md border-t-4 border-amber-600 flex flex-col justify-between">
+                        <div>
+                            <div class="text-4xl mb-4 text-center">🎨</div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Sản Xuất Thủ Công Mỹ Nghệ</h3>
+                            <p class="text-gray-600 text-sm mb-4">Sản xuất và cung cấp các sản phẩm thủ công tinh xảo, mang giá trị nghệ thuật và tính ứng dụng cao trong đời sống.</p>
+                        </div>
+                    </div>
+
+                    <!-- Ô 4 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-md border-t-4 border-rose-600 flex flex-col justify-between">
+                        <div>
+                            <div class="text-4xl mb-4 text-center">❤️</div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Hỗ Trợ Gia Đình Khó Khăn</h3>
+                            <p class="text-gray-600 text-sm mb-4">Đồng hành, sẻ chia và hỗ trợ các gia đình có hoàn cảnh khó khăn nuôi dạy trẻ tự kỷ, chậm phát triển, tăng động.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div id="tab-hoatdong" class="tab-content py-32 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 text-center">
-                <h1 class="text-4xl font-bold text-navbg">Các hoạt động tiêu biểu</h1>
-            </div>
+        <div id="tab-hoatdong" class="tab-content py-32 bg-gray-50 text-center">
+            <h1 class="text-4xl font-bold text-navbg">Các hoạt động tiêu biểu</h1>
         </div>
 
-        <div id="tab-lienhe" class="tab-content py-32 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 text-center">
-                <h1 class="text-4xl font-bold text-navbg">Liên hệ với chúng tôi</h1>
-            </div>
+        <div id="tab-lienhe" class="tab-content py-32 bg-gray-50 text-center">
+            <h1 class="text-4xl font-bold text-navbg">Liên hệ với chúng tôi</h1>
         </div>
     </main>
 
-    <!-- 3. FOOTER (ĐÃ ĐƯỢC CHIA LÀM 3 CỘT) -->
+    <!-- 3. FOOTER -->
     <footer class="bg-gray-900 text-white pt-12 pb-6 border-t-4 border-navbg">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <!-- Cột 1: Logo & Slogan -->
             <div>
                 <div class="bg-white p-1 shadow-lg w-20 h-20 flex items-center justify-center rounded-full overflow-hidden border-2 border-white mb-4">
                     <img src="image_bdbb55.jpg" alt="Logo Trung Tâm" class="w-full h-full object-contain">
@@ -219,7 +250,6 @@
                 </div>
             </div>
 
-            <!-- Cột 2: Thông tin liên hệ ĐÃ THÊM EMAIL -->
             <div>
                 <h3 class="text-xl font-bold mb-4 text-btnbg uppercase">Thông tin liên hệ</h3>
                 <p class="mb-4 flex items-start gap-3 text-gray-300">
@@ -236,22 +266,20 @@
                 </p>
             </div>
 
-            <!-- Cột 3: Bản đồ -->
             <div>
                 <h3 class="text-xl font-bold mb-4 text-btnbg uppercase">Bản đồ chỉ đường</h3>
                 <div class="w-full h-56 bg-gray-800 rounded-lg overflow-hidden shadow-lg border border-gray-700 relative">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14898.81068837119!2d105.7218785!3d20.9842172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313453a25d2cba59%3A0xc31639dcc04bc0df!2sKhu%20%C4%91%C3%B4%20th%E1%BB%8B%20Geleximco%20L%C3%AA%20Tr%E1%BB%8Dng%20T%E1%BA%A5n!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
-
         </div>
         <div class="text-center text-gray-500 text-sm mt-10 border-t border-gray-800 pt-6">
             &copy; 2026 Trung tâm Dạy nghề nhân đạo. All rights reserved.
         </div>
     </footer>
 
-    <!-- 4. NÚT ĐIỆN THOẠI RUNG ĐỘNG -->
-    <a href="tel:0823972886" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition duration-300 group cursor-pointer">
+    <!-- 4. NÚT ĐIỆN THOẠI -->
+    <a href="javascript:void(0);" onclick="alert('Hotline liên hệ: 0823 972 886');" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition duration-300 group cursor-pointer">
         <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
         <i class="fas fa-phone-alt text-2xl relative z-10 group-hover:rotate-12 transition-transform"></i>
         <span class="absolute right-16 bg-gray-900 text-white text-sm font-bold px-4 py-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
