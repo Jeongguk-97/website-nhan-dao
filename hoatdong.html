@@ -20,6 +20,25 @@
             }
         }
     </script>
+    <style>
+        /* 4 ảnh nền cho 4 phần/hoạt động */
+        .bg-hd1 {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('nềnnhđ.jpg');
+            background-size: cover; background-position: center; background-attachment: fixed;
+        }
+        .bg-hd2 {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('nềnnhđ2.jpg');
+            background-size: cover; background-position: center; background-attachment: fixed;
+        }
+        .bg-hd3 {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('nềnnhđ3.jpg');
+            background-size: cover; background-position: center; background-attachment: fixed;
+        }
+        .bg-hd4 {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url('nềnnhđ4.jpg');
+            background-size: cover; background-position: center; background-attachment: fixed;
+        }
+    </style>
 </head>
 <body class="font-sans text-gray-900 bg-gray-50 flex flex-col min-h-screen">
 
@@ -38,77 +57,94 @@
         </div>
     </header>
 
-    <!-- NỘI DUNG CHÍNH: DANH SÁCH HOẠT ĐỘNG -->
-    <main class="flex-grow py-16 px-4 max-w-7xl mx-auto w-full">
-        <div class="text-center mb-16">
-            <h1 class="text-4xl md:text-5xl font-bold text-navbg uppercase mb-4">Các Hoạt Động Tiêu Biểu</h1>
-            <div class="w-24 h-1 bg-btnbg mx-auto"></div>
-        </div>
+    <!-- NỘI DUNG CHÍNH -->
+    <main class="flex-grow">
+        
+        <!-- Phần Tiêu đề trang (Sử dụng nền ảnh 4) -->
+        <section class="py-16 px-4 bg-hd4 text-center border-b">
+            <div class="max-w-7xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold text-navbg uppercase mb-4">Các Hoạt Động Tiêu Biểu</h1>
+                <div class="w-24 h-1 bg-btnbg mx-auto"></div>
+            </div>
+        </section>
 
-        <div class="space-y-16">
+        <!-- Danh sách bài viết có lồng ảnh nền -->
+        <div class="space-y-0">
             
-            <!-- Hoạt động 1 -->
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-8 items-center border border-gray-100 p-6 md:p-8">
-                <div class="rounded-xl overflow-hidden shadow-md h-[320px]">
-                    <a href="baiviet1.html"><img src="hoạt động 1.jpg" alt="Hoạt động 1" class="w-full h-full object-cover hover:scale-105 transition duration-500"></a>
+            <!-- Hoạt động 1 (Nền ảnh: nềnnhđ.jpg) -->
+            <section class="py-16 px-4 bg-hd1 border-b">
+                <div class="max-w-7xl mx-auto">
+                    <div class="bg-white/95 rounded-2xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-8 items-center border border-gray-100 p-6 md:p-8">
+                        <div class="rounded-xl overflow-hidden shadow-md h-[320px]">
+                            <a href="baiviet1.html"><img src="hoạt động 1.jpg" alt="Hoạt động 1" class="w-full h-full object-cover hover:scale-105 transition duration-500"></a>
+                        </div>
+                        <div>
+                            <span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Hoạt động cộng đồng</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-3 mb-4">
+                                <a href="baiviet1.html" class="hover:text-teal-700 transition">1. Chương trình Thiện nguyện tháng 7-2026 của Trung tâm</a>
+                            </h2>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                Trung tâm tổ chức chuyến thăm hỏi, trao quà và động viên trực tiếp các hộ gia đình có hoàn cảnh khó khăn, các em nhỏ yếu thế tại địa phương. Chương trình lan tỏa tình yêu thương, tinh thần tương thân tương ái...
+                            </p>
+                            <a href="baiviet1.html" class="inline-flex items-center gap-2 bg-btnbg text-white font-semibold px-6 py-2.5 rounded-lg hover:bg-green-700 transition shadow">
+                                Xem chi tiết bài viết <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Hoạt động cộng đồng</span>
-                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-3 mb-4">
-                        <a href="baiviet1.html" class="hover:text-teal-700 transition">1. Chương trình Thiện nguyện tháng 7-2026 của Trung tâm</a>
-                    </h2>
-                    <p class="text-gray-600 leading-relaxed mb-6">
-                        Trung tâm tổ chức chuyến thăm hỏi, trao quà và động viên trực tiếp các hộ gia đình có hoàn cảnh khó khăn, các em nhỏ yếu thế tại địa phương. Chương trình lan tỏa tình yêu thương, tinh thần tương thân tương ái...
-                    </p>
-                    <a href="baiviet1.html" class="inline-flex items-center gap-2 bg-btnbg text-white font-semibold px-6 py-2.5 rounded-lg hover:bg-green-700 transition shadow">
-                        Xem chi tiết bài viết <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
+            </section>
 
-            <!-- Hoạt động 2 -->
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-8 items-center border border-gray-100 p-6 md:p-8">
-                <div class="rounded-xl overflow-hidden shadow-md h-[320px] lg:order-2">
-                    <a href="baiviet2.html"><img src="hoạt động 2.jpg" alt="Hoạt động 2" class="w-full h-full object-cover hover:scale-105 transition duration-500"></a>
+            <!-- Hoạt động 2 (Nền ảnh: nềnnhđ2.jpg) -->
+            <section class="py-16 px-4 bg-hd2 border-b">
+                <div class="max-w-7xl mx-auto">
+                    <div class="bg-white/95 rounded-2xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-8 items-center border border-gray-100 p-6 md:p-8">
+                        <div class="rounded-xl overflow-hidden shadow-md h-[320px] lg:order-2">
+                            <a href="baiviet2.html"><img src="hoạt động 2.jpg" alt="Hoạt động 2" class="w-full h-full object-cover hover:scale-105 transition duration-500"></a>
+                        </div>
+                        <div class="lg:order-1">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Tư vấn & Hỗ trợ</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-3 mb-4">
+                                <a href="baiviet2.html" class="hover:text-teal-700 transition">2. Hỗ trợ các hoàn cảnh có con em bị rối loạn phổ tự kỷ</a>
+                            </h2>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                Đồng hành cùng các bậc phụ huynh trong hành trình nuôi dạy con đặc biệt. Trung tâm cung cấp các buổi tư vấn chuyên sâu, tháo gỡ những hiểu lầm phổ biến về tự kỷ, đồng thời hỗ trợ định hướng phương pháp...
+                            </p>
+                            <a href="baiviet2.html" class="inline-flex items-center gap-2 bg-btnbg text-white font-semibold px-6 py-2.5 rounded-lg hover:bg-green-700 transition shadow">
+                                Xem chi tiết bài viết <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="lg:order-1">
-                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Tư vấn & Hỗ trợ</span>
-                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-3 mb-4">
-                        <a href="baiviet2.html" class="hover:text-teal-700 transition">2. Hỗ trợ các hoàn cảnh có con em bị rối loạn phổ tự kỷ</a>
-                    </h2>
-                    <p class="text-gray-600 leading-relaxed mb-6">
-                        Đồng hành cùng các bậc phụ huynh trong hành trình nuôi dạy con đặc biệt. Trung tâm cung cấp các buổi tư vấn chuyên sâu, tháo gỡ những hiểu lầm phổ biến về tự kỷ, đồng thời hỗ trợ định hướng phương pháp...
-                    </p>
-                    <a href="baiviet2.html" class="inline-flex items-center gap-2 bg-btnbg text-white font-semibold px-6 py-2.5 rounded-lg hover:bg-green-700 transition shadow">
-                        Xem chi tiết bài viết <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
+            </section>
 
-            <!-- Hoạt động 3 -->
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-8 items-center border border-gray-100 p-6 md:p-8">
-                <div class="rounded-xl overflow-hidden shadow-md h-[320px]">
-                    <a href="baiviet3.html"><img src="hđ 3.jpg" alt="Hoạt động 3" class="w-full h-full object-cover hover:scale-105 transition duration-500"></a>
+            <!-- Hoạt động 3 (Nền ảnh: nềnnhđ3.jpg) -->
+            <section class="py-16 px-4 bg-hd3">
+                <div class="max-w-7xl mx-auto">
+                    <div class="bg-white/95 rounded-2xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-8 items-center border border-gray-100 p-6 md:p-8">
+                        <div class="rounded-xl overflow-hidden shadow-md h-[320px]">
+                            <a href="baiviet3.html"><img src="hđ 3.jpg" alt="Hoạt động 3" class="w-full h-full object-cover hover:scale-105 transition duration-500"></a>
+                        </div>
+                        <div>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Can thiệp chuyên sâu</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-3 mb-4">
+                                <a href="baiviet3.html" class="hover:text-teal-700 transition">3. Sẵn sàng đồng hành cùng trẻ rối loạn phổ tự kỷ, chậm nói, tăng động…</a>
+                            </h2>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                Thực hiện quy trình can thiệp cá nhân 1-1 bài bản, khoa học. Giúp rèn luyện và phát triển các kỹ năng cần thiết cho các hoạt động hàng ngày, kích thích phát triển ngôn ngữ, giúp trẻ tự tin hòa nhập...
+                            </p>
+                            <a href="baiviet3.html" class="inline-flex items-center gap-2 bg-btnbg text-white font-semibold px-6 py-2.5 rounded-lg hover:bg-green-700 transition shadow">
+                                Xem chi tiết bài viết <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Can thiệp chuyên sâu</span>
-                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-3 mb-4">
-                        <a href="baiviet3.html" class="hover:text-teal-700 transition">3. Sẵn sàng đồng hành cùng trẻ rối loạn phổ tự kỷ, chậm nói, tăng động…</a>
-                    </h2>
-                    <p class="text-gray-600 leading-relaxed mb-6">
-                        Thực hiện quy trình can thiệp cá nhân 1-1 bài bản, khoa học. Giúp rèn luyện và phát triển các kỹ năng cần thiết cho các hoạt động hàng ngày, kích thích phát triển ngôn ngữ, giúp trẻ tự tin hòa nhập...
-                    </p>
-                    <a href="baiviet3.html" class="inline-flex items-center gap-2 bg-btnbg text-white font-semibold px-6 py-2.5 rounded-lg hover:bg-green-700 transition shadow">
-                        Xem chi tiết bài viết <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
+            </section>
 
         </div>
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-gray-900 text-white pt-12 pb-6 border-t-4 border-navbg mt-20">
+    <footer class="bg-gray-900 text-white pt-12 pb-6 border-t-4 border-navbg">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
                 <div class="bg-white p-1 shadow-lg w-20 h-20 flex items-center justify-center rounded-full overflow-hidden border-2 border-white mb-4">
@@ -130,6 +166,15 @@
         </div>
         <div class="text-center text-gray-500 text-sm mt-10 border-t border-gray-800 pt-6">&copy; 2026 Trung tâm Dạy nghề nhân đạo. All rights reserved.</div>
     </footer>
+
+    <!-- Nút điện thoại -->
+    <a href="javascript:void(0);" onclick="alert('Hotline liên hệ: 0823 972 886');" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition duration-300 group cursor-pointer">
+        <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
+        <i class="fas fa-phone-alt text-2xl relative z-10 group-hover:rotate-12 transition-transform"></i>
+        <span class="absolute right-16 bg-gray-900 text-white text-sm font-bold px-4 py-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            0823 972 886
+        </span>
+    </a>
 
 </body>
 </html>
